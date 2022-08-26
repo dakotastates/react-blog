@@ -2,6 +2,8 @@ import './styles/App.css';
 
 import Home from './components/Home';
 import NotFound from './components/NotFound';
+import Navbar from './components/Navbar'
+import Admin from './admin/Admin'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -11,8 +13,9 @@ function App() {
     <div className="app">
 
       <Routes>
-        <Route path='/' element={<><Home/></>} />
-        <Route path="*" element={<><NotFound/></>}/>
+        <Route path='/admin/*' element={<><Admin/></>} />
+        <Route path='/' element={<><Navbar /><Home/></>} />
+        <Route path="*" element={<><Navbar /><NotFound/></>}/>
       </Routes>
     </div>
   </Router>
