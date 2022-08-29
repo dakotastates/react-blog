@@ -21,6 +21,11 @@ function AdminNav() {
             Home
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink to="/admin/dashboard/register" className="nav-link">
+            Add Admin
+          </NavLink>
+        </li>
         <li>
           <button onClick={signOut} >
             Logout

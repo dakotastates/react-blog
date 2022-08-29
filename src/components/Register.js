@@ -35,7 +35,7 @@ function Register() {
             displayName: name,
             admin: false
           }).then(()=>{
-            navigation('/admin');
+            navigation('/');
           })
 
         }
@@ -64,11 +64,12 @@ function Register() {
           <h5>Re-enter password</h5>
           <input type='password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
 
-          <button className='login__signInButton ' onClick={register}>Create Admin User</button>
+          <button className='login__signInButton ' onClick={register}>Create Account</button>
 
           {error && <div>{error}</div>}
         </form>
-
+        <p>Have an Account?</p>
+        <button className='login__registerButton' onClick={()=>navigation('/login')}>Login</button>
 
       </div>
     </div>

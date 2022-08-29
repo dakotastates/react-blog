@@ -15,19 +15,20 @@ function Admin() {
 
 
   useEffect(()=>{
-  auth.onAuthStateChanged(authUser =>{
 
-    if (authUser) {
-      if (!isLoggedIn) dispatch({ type: "SET_USER", payload: authUser });
-      if (window.location.pathname === "/admin")
-        navigation('/admin/dashboard')
-      navigation(window.location.pathname)
-    } else {
-      navigation('/admin/login')
-    }
+    auth.onAuthStateChanged(authUser =>{
 
-  })
-},[dispatch])
+      if (authUser) {
+        if (!isLoggedIn) dispatch({ type: "SET_USER", payload: authUser });
+        if (window.location.pathname === "/admin")
+          navigation('/admin/dashboard')
+        navigation(window.location.pathname)
+      } else {
+        navigation('/admin/login')
+      }
+
+    })
+  },[dispatch])
 
   return (
 
